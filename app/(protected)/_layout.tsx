@@ -11,7 +11,6 @@ export default function ProtectedLayout() {
   const role = useAuthStore((state) => state.role);
   const fetchChildren = useChildrenStore((state) => state.fetchChildren);
 
-  // Token va role mavjud bo‘lsa, bolalarni yuklash
   useEffect(() => {
     if (token && role === "parent") {
       console.log("aaaaa");

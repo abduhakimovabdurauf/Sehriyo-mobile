@@ -37,7 +37,7 @@ export const useGradebookStore = create<GradebookState>()(
         set(isLoadMore ? { loadingMore: true, error: null } : { loading: true, error: null });
 
         try {
-          const baseUrl = process.env.VITE_API_BASE_URL || 'https://dev.sehriyo.uz';
+          const baseUrl = process.env.EXPO_PUBLIC_API_URL || '';
           let endpoint = `${baseUrl}/api/web/diary`;
 
           if (date) {
@@ -53,7 +53,7 @@ export const useGradebookStore = create<GradebookState>()(
           });
 
           if (response.status === 401) {
-            useAuthStore.getState().logout(); // navigationni komponentda qilish
+            useAuthStore.getState().logout();
             return;
           }
 

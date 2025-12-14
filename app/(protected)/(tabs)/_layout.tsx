@@ -51,6 +51,34 @@ export default function TabsLayout() {
           href: null,
         }}
       />
+      <Tabs.Screen
+        name="menu"
+        options={{
+          title: "Menu",
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="finalGrades"
+        options={{
+          title: "finalGrades",
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="manResults"
+        options={{
+          title: "manResults",
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="grades"
+        options={{
+          title: "grades",
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

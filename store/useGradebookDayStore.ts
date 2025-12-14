@@ -26,7 +26,7 @@ export const useGradebookDayStore = create<GradebookDayState>((set, get) => ({
     set({ loading: true, error: null });
 
     try {
-      const baseUrl = process.env.NATIVE_API_URL || 'https://dev.sehriyo.uz';
+      const baseUrl = process.env.EXPO_PUBLIC_API_URL || '';
       let endpoint = '';
 
       if (role === 'parent') {

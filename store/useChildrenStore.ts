@@ -33,7 +33,7 @@ export const useChildrenStore = create<ChildrenState>()(
                 set({ loading: true })
 
                 try {
-                    const baseUrl = process.env.NATIVE_API_URL || 'https://dev.sehriyo.uz'
+                    const baseUrl = process.env.EXPO_PUBLIC_API_URL || ''
                     const endpoint = `${baseUrl}/api/children`
 
                     const res = await fetch(endpoint, {
@@ -48,7 +48,6 @@ export const useChildrenStore = create<ChildrenState>()(
 
                     const data = await res.json()
                     const children = data?.data || []
-                    console.log('children: ', children);
                     
                     set((state) => ({
                         children,

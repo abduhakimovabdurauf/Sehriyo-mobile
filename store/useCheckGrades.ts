@@ -27,7 +27,7 @@ export const useCheckGradeStore = create<CheckGradesState>((set) => ({
     set({ loading: true, error: null });
 
     try {
-      const baseUrl = process.env.NATIVE_API_URL || "https://dev.sehriyo.uz";
+      const baseUrl = process.env.EXPO_PUBLIC_API_URL || "";
 
       const endpoint = `${baseUrl}/api/web/check-grades`;
 

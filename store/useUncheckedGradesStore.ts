@@ -33,7 +33,7 @@ export const useUncheckedGradesStore = create<UncheckedGradesState>((set) => ({
       const { user, role, clearAuth } = useAuthStore.getState();
       if (!user) throw new Error('User not found');
 
-      const baseUrl = process.env.NATIVE_API_URL || 'https://dev.sehriyo.uz';
+      const baseUrl = process.env.EXPO_PUBLIC_API_URL || '';
       let endpoint = '';
 
       if (role === 'parent') {

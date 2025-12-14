@@ -97,7 +97,8 @@ export default function GradebookDayScreen() {
   return (
     <ScrollView style={{ padding: 16 }}>
       {/* Title */}
-      <Text style={styles.title}>{pageTitle}</Text>
+      <Text style={styles.title}>Дневник</Text>
+      <Text style={styles.subtitle}>{pageTitle}</Text>
 
       {/* Dates Horizontal Scroll */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -252,6 +253,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "700",
+    marginBottom: 12,
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: "600",
     marginBottom: 12,
   },
   dateButton: {

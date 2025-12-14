@@ -1,6 +1,6 @@
 // app/(protected)/gradebook.tsx
 import React, { useEffect, useRef } from "react";
-import { router } from 'expo-router'
+import { router } from "expo-router";
 import {
   View,
   Text,
@@ -83,7 +83,7 @@ export default function GradebookPage() {
 
   const handleCardClick = (date: string) => {
     setSelectedDate(date);
-    router.replace('/gradebookday');
+    router.replace("/gradebookday");
   };
 
   const handleLoadMore = () => {
@@ -139,19 +139,20 @@ export default function GradebookPage() {
 
         return (
           <View key={weekNum}>
-            {uniqueDates.map((date) => {
-              const count = dateCounts[date] || 0;
-              return (
-                <TouchableOpacity
-                  key={date}
-                  onPress={() => handleCardClick(date)}
-                  style={styles.card}
-                >
-                  <Text style={styles.cardTitle}>{formatDate(date)}</Text>
-                  {count > 0 && <Text style={styles.badge}>{count}</Text>}
-                </TouchableOpacity>
-              );
-            })}
+            {uniqueDates
+              .map((date) => {
+                const count = dateCounts[date] || 0;
+                return (
+                  <TouchableOpacity
+                    key={date}
+                    onPress={() => handleCardClick(date)}
+                    style={styles.card}
+                  >
+                    <Text style={styles.cardTitle}>{formatDate(date)}</Text>
+                    {count > 0 && <Text style={styles.badge}>{count}</Text>}
+                  </TouchableOpacity>
+                );
+              })}
           </View>
         );
       })}
@@ -171,11 +172,11 @@ export default function GradebookPage() {
 const styles = StyleSheet.create({
   container: { padding: 16, paddingBottom: 32 },
   center: { flex: 1, justifyContent: "center", alignItems: "center" },
-  title:{
+  title: {
     fontSize: 28,
     fontWeight: 700,
     // lineHeight: 30
-    marginBottom: 16
+    marginBottom: 16,
   },
   card: {
     backgroundColor: "#fff",

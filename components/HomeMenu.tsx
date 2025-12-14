@@ -10,34 +10,34 @@ export default function HomeMenu() {
   const menuItems = [
     {
       title: 'Дневник',
-      bgColor: '#2563eb', // blue-600
+      bgColor: '#2563eb',
       icon: <Ionicons name='book' size={32} color="#fff" />,
       link: '/gradebook',
     },
-    // {
-    //   title: 'Меню',
-    //   bgColor: '#f97316', // orange-500
-    //   icon: <Utensils size={32} color="#fff" />,
-    //   link: '/menu',
-    // },
-    // {
-    //   title: 'Итоговые оценки',
-    //   bgColor: '#0ea5e9', // sky-500
-    //   icon: <Scale size={32} color="#fff" />,
-    //   link: '/final-grades',
-    // },
-    // {
-    //   title: 'Итоги Малой Академии',
-    //   bgColor: '#7c3aed', // violet-600
-    //   icon: <GraduationCap size={32} color="#fff" />,
-    //   link: '/man-results',
-    // },
-    // {
-    //   title: 'Все оценки',
-    //   bgColor: '#facc15', // yellow-500
-    //   icon: <FileCheck2 size={32} color="#fff" />,
-    //   link: '/grades',
-    // },
+    {
+      title: 'Меню',
+      bgColor: '#f97316',
+      icon: <Ionicons name='fast-food' size={32} color="#fff" />,
+      link: '/menu',
+    },
+    {
+      title: 'Итоговые оценки',
+      bgColor: '#0ea5e9',
+      icon: <Ionicons name='scale' size={32} color="#fff" />,
+      link: '/finalGrades',
+    },
+    {
+      title: 'Итоги Малой Академии',
+      bgColor: '#7c3aed', // violet-600results
+      icon: <Ionicons name='school' size={32} color="#fff" />,
+      link: '/manResults',
+    },
+    {
+      title: 'Все оценки',
+      bgColor: '#facc15', // yellow-500
+      icon: <Ionicons name='document' size={32} color="#fff" />,
+      link: '/grades',
+    },
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function HomeMenu() {
         <TouchableOpacity
           key={idx}
           style={styles.menuItem}
-          onPress={() => router.push(item.link)}
+          onPress={() => router.push(item.link as any)}
         >
           <View style={[styles.iconWrapper, { backgroundColor: item.bgColor }]}>
             {item.icon}
@@ -61,14 +61,13 @@ export default function HomeMenu() {
 const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
     // padding: 16,
     paddingVertical: 16
   },
   menuItem: {
-    width: '22%', // 4 items per row approx
-    marginBottom: 16,
+    width: '22%',
     alignItems: 'center',
   },
   iconWrapper: {

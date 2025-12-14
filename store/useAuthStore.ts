@@ -39,7 +39,7 @@ export const useAuthStore = create<AuthState>()(
           body.append('password', password)
           body.append('device', 'mobile')
 
-          const baseUrl = process.env.NATIVE_API_URL || 'https://dev.sehriyo.uz'
+          const baseUrl = process.env.EXPO_PUBLIC_API_URL || ''
           const endpoint = `${baseUrl}/api/auth`
 
           const res = await fetch(endpoint, {
@@ -52,8 +52,6 @@ export const useAuthStore = create<AuthState>()(
 
           const data = await res.json()
 
-          console.log('authentication has been successfully: ', data.token);
-          
           set({
             token: data.token,
             user: data.user || data.parent_info || null,
@@ -65,7 +63,6 @@ export const useAuthStore = create<AuthState>()(
 
         } catch (err: any) {
           set({ error: err.message })
-          // console.log('url: ', process.env.NATIVE_API_URL);
           
           throw err
         } finally {
@@ -79,7 +76,7 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: 'auth',
-      storage: RNStorage, // ✅ TypeScript bilan moslandi
+      storage: RNStorage,
     }
   )
 )
